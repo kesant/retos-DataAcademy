@@ -1,7 +1,8 @@
 def ganador (jugador1,jugador2):#funcion que elije el ganador en una ronda
     victoria=(jugador1,jugador2)
-    gano=[("piedra","tijera"),("tijera","papel"),("papel,piedra")]
-    perdio=[("tijera","piedra"),("papel","tijera"),("piedra,papel")]
+    gano=[("piedra","tijera"),("tijera","papel"),("papel","piedra")]
+    perdio=[("tijera","piedra"),("papel","tijera"),("piedra","papel")]
+    empate=[("tijera","tijera"),("papel","papel"),("piedra","piedra")]
     if victoria in gano:
         return "jugador1"
     elif victoria in perdio:
