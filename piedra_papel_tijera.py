@@ -4,13 +4,15 @@ def ganador (jugador1,jugador2):#funcion que elije el ganador en una ronda
     perdio=[("tijera","piedra"),("papel","tijera"),("piedra,papel")]
     if victoria in gano:
         return "jugador1"
-    else:
+    elif victoria in perdio:
         return "jugador2"  
+    else:
+        return "empate"
 
 def proceso():#elije el ganador del juego
     opciones=["piedra","papel","tijera"]
     puntuacion=[]
-    for intentos in range(3):
+    while len(puntuacion)<3:
         i=0
         while i==0:
             jugador1=input("selecione su opcion jugador 1:")
@@ -22,9 +24,12 @@ def proceso():#elije el ganador del juego
         if ganador(jugador1,jugador2)=="jugador1":
             print("El jugador 1 gano esta ronda")
             puntuacion.append(1)  
-        else:
+        elif ganador(jugador1,jugador2)=="jugador2":
             print("EL jugador 2 gano esta ronda") 
-            puntuacion.append(2)    
+            puntuacion.append(2)   
+        else:
+            print("Es un empate") 
+
     if puntuacion.count(1)>=2:
         print("El jugador 1 gano el juego")  
     else :
